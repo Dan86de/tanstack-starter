@@ -7,11 +7,9 @@ export const Route = createFileRoute("/")({
 function Home() {
 	return (
 		<div className="max-w-lg mx-auto flex items-center justify-center h-screen">
-			<div className="stack-v-2 w-full">
-				<div className="bg-neutral-200 w-full h-10" />
-				<div className="bg-neutral-200 w-full h-10" />
-				<div className="bg-neutral-200 w-full h-10" />
-			</div>
+			<h1 className="text-2xl font-bold">
+				Every Layout Components Implementation in Tailwind CSS V4
+			</h1>
 		</div>
 	);
 }

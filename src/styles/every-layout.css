@@ -1,5 +1,46 @@
+/* Stack utility */
 @utility stack-v-* {
 	display: flex;
 	flex-flow: column nowrap;
 	gap: --spacing(--value(integer));
+}
+
+/* Box utility */
+@theme {
+	--s1: 1rem;
+	--border-width: 4px;
+}
+
+@utility box-* {
+	--s1: --spacing(--value(integer));
+	--border-width: 4px;
+	--box-color: var(--foreground);
+	--box-bg: var(--background);
+	--box-border: var(--border);
+
+	padding: var(--s1);
+	border: var(--border-width) solid var(--box-border);
+	color: var(--box-color);
+	background-color: var(--box-bg);
+
+	& * {
+		color: inherit;
+	}
+}
+
+@utility box-inverted-* {
+	--s1: --spacing(--value(integer));
+	--border-width: 4px;
+	--box-color: var(--background);
+	--box-bg: var(--foreground);
+	--box-border: var(--border);
+
+	padding: var(--s1);
+	border: var(--border-width) solid var(--box-border);
+	color: var(--box-color);
+	background-color: var(--box-bg);
+
+	& * {
+		color: inherit;
+	}
 }
