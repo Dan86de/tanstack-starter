@@ -6,7 +6,7 @@ export const Route = createFileRoute("/stack")({
 
 function RouteComponent() {
 	return (
-		<div className="max-w-lg mx-auto flex items-center justify-center h-screen">
+		<div className="mx-auto flex h-screen max-w-lg items-center justify-center">
 			<div className="stack-v-4 w-full">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum

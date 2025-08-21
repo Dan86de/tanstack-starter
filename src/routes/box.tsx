@@ -6,8 +6,8 @@ export const Route = createFileRoute("/box")({
 
 function RouteComponent() {
 	return (
-		<div className="max-w-lg mx-auto flex items-center justify-center h-screen">
-			<div className="box-8 dark">
+		<div className="mx-auto flex h-screen max-w-lg items-center justify-center">
+			<div className="box-2">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
 					dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit

@@ -1,12 +1,21 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"assist": {
+		"enabled": true
+	},
 	"vcs": {
-		"enabled": false,
+		"enabled": true,
 		"clientKind": "git",
-		"useIgnoreFile": false
+		"useIgnoreFile": true
 	},
 	"files": {
-		"ignoreUnknown": false
+		"ignoreUnknown": false,
+		"includes": [
+			"src/**/*.js",
+			"src/**/*.ts",
+			"src/**/*.tsx",
+			"!src/routeTree.gen.ts"
+		]
 	},
 	"formatter": {
 		"enabled": true,
@@ -16,12 +25,23 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
-			"suspicious": {
-				"noUnknownAtRules": {
+			"nursery": {
+				"useSortedClasses": {
 					"level": "error",
+					"fix": "safe",
 					"options": {
-						"allowAtRules": ["utility"]
+						"attributes": ["className"],
+						"functions": ["cn"]
 					}
+				}
+			},
+			"style": {
+				"noRestrictedImports": "error"
+			},
+			"correctness": {
+				"noUnusedImports": {
+					"level": "error",
+					"fix": "safe"
 				}
 			}
 		}
@@ -29,14 +49,6 @@
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "double"
-		}
-	},
-	"assist": {
-		"enabled": true,
-		"actions": {
-			"source": {
-				"organizeImports": "on"
-			}
 		}
 	}
 }

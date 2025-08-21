@@ -6,7 +6,9 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build"
+		"build": "vite build",
+		"lint": "biome lint --write",
+		"format": "biome format . --write"
 	},
 	"keywords": [],
 	"author": "",
@@ -15,8 +17,10 @@
 		"@tailwindcss/vite": "^4.1.12",
 		"@tanstack/react-router": "^1.131.27",
 		"@tanstack/react-start": "^1.131.27",
+		"clsx": "^2.1.1",
 		"react": "^19.1.1",
 		"react-dom": "^19.1.1",
+		"tailwind-merge": "^3.3.1",
 		"tailwindcss": "^4.1.12",
 		"vite": "^7.1.3"
 	},
