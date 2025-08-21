@@ -1,0 +1,29 @@
+{
+	"name": "tanstack-starter",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@tanstack/react-router": "^1.131.27",
+		"@tanstack/react-start": "^1.131.27",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"vite": "^7.1.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.0",
+		"@types/react": "^19.1.10",
+		"@types/react-dom": "^19.1.7",
+		"@vitejs/plugin-react": "^5.0.1",
+		"typescript": "^5.9.2",
+		"vite-tsconfig-paths": "^5.1.4"
+	}
+}
