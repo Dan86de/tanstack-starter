@@ -1,0 +1,16 @@
+@utility cluster-* {
+  --cluster-gap: --spacing(--value(integer));
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-gap, 1rem);
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@utility cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}

@@ -26,6 +26,11 @@ function Home() {
 						Center
 					</Link>
 				</li>
+				<li>
+					<Link to="/cluster" className="hover:underline">
+						Cluster
+					</Link>
+				</li>
 			</ol>
 		</div>
 	);

@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StackRouteImport } from './routes/stack'
+import { Route as ClusterRouteImport } from './routes/cluster'
 import { Route as CenterRouteImport } from './routes/center'
 import { Route as BoxRouteImport } from './routes/box'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +18,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const StackRoute = StackRouteImport.update({
   id: '/stack',
   path: '/stack',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClusterRoute = ClusterRouteImport.update({
+  id: '/cluster',
+  path: '/cluster',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CenterRoute = CenterRouteImport.update({
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/box': typeof BoxRoute
   '/center': typeof CenterRoute
+  '/cluster': typeof ClusterRoute
   '/stack': typeof StackRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/box': typeof BoxRoute
   '/center': typeof CenterRoute
+  '/cluster': typeof ClusterRoute
   '/stack': typeof StackRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/box': typeof BoxRoute
   '/center': typeof CenterRoute
+  '/cluster': typeof ClusterRoute
   '/stack': typeof StackRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/box' | '/center' | '/stack'
+  fullPaths: '/' | '/box' | '/center' | '/cluster' | '/stack'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/box' | '/center' | '/stack'
-  id: '__root__' | '/' | '/box' | '/center' | '/stack'
+  to: '/' | '/box' | '/center' | '/cluster' | '/stack'
+  id: '__root__' | '/' | '/box' | '/center' | '/cluster' | '/stack'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BoxRoute: typeof BoxRoute
   CenterRoute: typeof CenterRoute
+  ClusterRoute: typeof ClusterRoute
   StackRoute: typeof StackRoute
 }
 
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/stack'
       fullPath: '/stack'
       preLoaderRoute: typeof StackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cluster': {
+      id: '/cluster'
+      path: '/cluster'
+      fullPath: '/cluster'
+      preLoaderRoute: typeof ClusterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/center': {
@@ -106,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BoxRoute: BoxRoute,
   CenterRoute: CenterRoute,
+  ClusterRoute: ClusterRoute,
   StackRoute: StackRoute,
 }
 export const routeTree = rootRouteImport
