@@ -1,0 +1,146 @@
+/* Center Utility */
+
+@theme {
+  /* Default typographic measure for optimal reading length */
+  --measure: 65ch;
+}
+
+/* Base center utility - centers content horizontally with optional max-width */
+@utility center {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--measure);
+}
+
+/* Center with custom max-width values */
+@utility center-* {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: --spacing(--value(integer));
+}
+
+/* Center with container scale using Tailwind's CSS variables */
+@utility center-3xs {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-3xs);
+}
+
+@utility center-2xs {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-2xs);
+}
+
+@utility center-xs {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-xs);
+}
+
+@utility center-sm {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-sm);
+}
+
+@utility center-md {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-md);
+}
+
+@utility center-lg {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-lg);
+}
+
+@utility center-xl {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-xl);
+}
+
+@utility center-2xl {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-2xl);
+}
+
+@utility center-3xl {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-3xl);
+}
+
+@utility center-4xl {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-4xl);
+}
+
+@utility center-5xl {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-5xl);
+}
+
+@utility center-6xl {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-6xl);
+}
+
+@utility center-7xl {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--container-7xl);
+}
+
+@utility center-full {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: 100%;
+}
+
+@utility center-none {
+  display: block;
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: none;
+}
+
+/* Center with text alignment */
+@utility center-text {
+  text-align: center;
+}
+
+/* Center with gutters (padding on sides) */
+@utility center-gutter-* {
+  padding-inline-start: --spacing(--value(integer));
+  padding-inline-end: --spacing(--value(integer));
+}
+
+/* Intrinsic centering - centers children based on their content width */
+@utility center-intrinsic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

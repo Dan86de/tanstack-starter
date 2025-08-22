@@ -1,16 +1,16 @@
 @import "tailwindcss";
-@import "./every-layout.css";
+@import "./every-layout/index.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-	--background: oklch(1 0 0);
-	--foreground: oklch(0.147 0.004 49.25);
-	--border: oklch(0.923 0.003 48.717);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.147 0.004 49.25);
+  --border: oklch(0.923 0.003 48.717);
 }
 
 .dark {
-	--background: oklch(0.147 0.004 49.25);
-	--foreground: oklch(0.985 0.001 106.423);
-	--border: oklch(1 0 0 / 10%);
+  --background: oklch(0.147 0.004 49.25);
+  --foreground: oklch(0.985 0.001 106.423);
+  --border: oklch(1 0 0 / 10%);
 }

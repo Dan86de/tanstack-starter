@@ -7,13 +7,13 @@ export const Route = createFileRoute("/box")({
 function RouteComponent() {
 	return (
 		<div className="mx-auto flex h-screen max-w-lg items-center justify-center">
-			<div className="box-2">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-					dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-					amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
-					consectetur adipiscing elit.
-				</p>
+			<div className="box-0 stack-v-2 w-xl items-center">
+				<div className="box-0 box-inverted w-full text-center [--border-width:0px]">
+					head
+				</div>
+				<div className="box-0 w-full text-center [--border-width:0px]">
+					body
+				</div>
 			</div>
 		</div>
 	);

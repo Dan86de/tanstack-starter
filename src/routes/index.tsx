@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
 	component: Home,
@@ -6,10 +6,27 @@ export const Route = createFileRoute("/")({
 
 function Home() {
 	return (
-		<div className="mx-auto flex h-screen max-w-lg items-center justify-center">
-			<h1 className="font-bold text-2xl">
+		<div className="mx-auto flex h-screen max-w-lg flex-col items-start justify-center gap-8">
+			<h1 className="text-center font-bold text-2xl">
 				Every Layout Components Implementation in Tailwind CSS V4
 			</h1>
+			<ol className="stack-v-0 list-inside list-decimal text-lg">
+				<li>
+					<Link to="/stack" className="hover:underline">
+						Stack
+					</Link>
+				</li>
+				<li>
+					<Link to="/box" className="hover:underline">
+						Box
+					</Link>
+				</li>
+				<li>
+					<Link to="/center" className="hover:underline">
+						Center
+					</Link>
+				</li>
+			</ol>
 		</div>
 	);
 }

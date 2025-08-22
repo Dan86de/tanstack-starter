@@ -1,0 +1,6 @@
+/* Stack utility */
+@utility stack-v-* {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: --spacing(--value(integer));
+}
