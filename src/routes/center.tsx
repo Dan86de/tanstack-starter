@@ -6,7 +6,7 @@ export const Route = createFileRoute("/center")({
 
 function RouteComponent() {
 	return (
-		<div className="stack-v-8 inset-0 h-screen">
+		<div className="stack-v-8 inset-0">
 			{/* Basic centered container */}
 			<div className="center">
 				<p>
@@ -29,7 +29,7 @@ function RouteComponent() {
 
 			{/* Centered with text alignment */}
 			<div className="center center-text">
-				<h1>Centered Heading</h1>
+				<h1 className="font-bold">Centered Heading</h1>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
 					dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
@@ -50,7 +50,7 @@ function RouteComponent() {
 
 			{/* Combine utilities for complex layouts */}
 			<article className="center-3xl center-gutter-6 center-text center-intrinsic">
-				<h1>Article Title</h1>
+				<h1 className="font-bold">Article Title</h1>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
 					dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
