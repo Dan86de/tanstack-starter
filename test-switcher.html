@@ -43,17 +43,45 @@
             --switcher-threshold: 40rem;
         }
 
-        /* Gap presets */
+        /* Gap presets - matching Tailwind's spacing scale */
+        .switcher-gap-0 {
+            --switcher-gap: 0;
+        }
+
+        .switcher-gap-1 {
+            --switcher-gap: 0.25rem;
+        }
+
         .switcher-gap-2 {
             --switcher-gap: 0.5rem;
+        }
+
+        .switcher-gap-3 {
+            --switcher-gap: 0.75rem;
         }
 
         .switcher-gap-4 {
             --switcher-gap: 1rem;
         }
 
+        .switcher-gap-5 {
+            --switcher-gap: 1.25rem;
+        }
+
         .switcher-gap-6 {
             --switcher-gap: 1.5rem;
+        }
+
+        .switcher-gap-8 {
+            --switcher-gap: 2rem;
+        }
+
+        .switcher-gap-10 {
+            --switcher-gap: 2.5rem;
+        }
+
+        .switcher-gap-12 {
+            --switcher-gap: 3rem;
         }
 
         /* Limit variants */
@@ -144,16 +172,30 @@
             <div class="box box-purple">5</div>
         </div>
 
-        <h2>Test 5: Different Gaps</h2>
-        <p>Small gap (0.5rem)</p>
+        <h2>Test 5: Different Gaps (Tailwind Spacing Scale)</h2>
+        <p>Tiny gap (0.25rem - gap-1)</p>
+        <div class="switcher switcher-md switcher-gap-1">
+            <div class="box box-orange">A</div>
+            <div class="box box-orange">B</div>
+            <div class="box box-orange">C</div>
+        </div>
+
+        <p style="margin-top: 1rem;">Small gap (0.5rem - gap-2)</p>
         <div class="switcher switcher-md switcher-gap-2">
             <div class="box box-orange">A</div>
             <div class="box box-orange">B</div>
             <div class="box box-orange">C</div>
         </div>
 
-        <p style="margin-top: 1rem;">Large gap (1.5rem)</p>
-        <div class="switcher switcher-md switcher-gap-6">
+        <p style="margin-top: 1rem;">Default gap (1rem - gap-4)</p>
+        <div class="switcher switcher-md switcher-gap-4">
+            <div class="box box-orange">A</div>
+            <div class="box box-orange">B</div>
+            <div class="box box-orange">C</div>
+        </div>
+
+        <p style="margin-top: 1rem;">Large gap (2rem - gap-8)</p>
+        <div class="switcher switcher-md switcher-gap-8">
             <div class="box box-orange">A</div>
             <div class="box box-orange">B</div>
             <div class="box box-orange">C</div>

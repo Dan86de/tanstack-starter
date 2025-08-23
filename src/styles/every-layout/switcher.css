@@ -74,45 +74,9 @@
   flex-basis: calc((var(--switcher-threshold, 60rem) - 100%) * 999);
 }
 
-/* Gap modifier utilities */
-@utility switcher-gap-0 {
-  --switcher-gap: 0;
-}
-
-@utility switcher-gap-1 {
-  --switcher-gap: 0.25rem;
-}
-
-@utility switcher-gap-2 {
-  --switcher-gap: 0.5rem;
-}
-
-@utility switcher-gap-3 {
-  --switcher-gap: 0.75rem;
-}
-
-@utility switcher-gap-4 {
-  --switcher-gap: 1rem;
-}
-
-@utility switcher-gap-5 {
-  --switcher-gap: 1.25rem;
-}
-
-@utility switcher-gap-6 {
-  --switcher-gap: 1.5rem;
-}
-
-@utility switcher-gap-8 {
-  --switcher-gap: 2rem;
-}
-
-@utility switcher-gap-10 {
-  --switcher-gap: 2.5rem;
-}
-
-@utility switcher-gap-12 {
-  --switcher-gap: 3rem;
+/* Gap modifier utilities using Tailwind's spacing scale */
+@utility switcher-gap-* {
+  --switcher-gap: --spacing(--value(integer));
 }
 
 /* Limit variants for controlling max items in horizontal layout */

@@ -430,15 +430,20 @@ export function SwitcherDemo() {
 					</div>
 
 					<div>
-						<h4 className="font-semibold mb-2">Gap Classes:</h4>
-						<ul className="grid grid-cols-3 gap-2 text-sm md:grid-cols-4">
-							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-0</code></li>
-							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-1</code></li>
-							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-2</code></li>
-							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-3</code></li>
-							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-4</code></li>
-							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-6</code></li>
-							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-8</code></li>
+						<h4 className="font-semibold mb-2">Gap Classes (Using Tailwind Spacing Scale):</h4>
+						<ul className="grid grid-cols-3 gap-2 text-sm md:grid-cols-5">
+							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-0</code> - 0</li>
+							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-1</code> - 0.25rem</li>
+							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-2</code> - 0.5rem</li>
+							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-3</code> - 0.75rem</li>
+							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-4</code> - 1rem</li>
+							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-5</code> - 1.25rem</li>
+							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-6</code> - 1.5rem</li>
+							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-8</code> - 2rem</li>
+							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-10</code> - 2.5rem</li>
+							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-12</code> - 3rem</li>
+							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-16</code> - 4rem</li>
+							<li><code className="rounded bg-white px-2 py-1 dark:bg-gray-800">switcher-gap-20</code> - 5rem</li>
 						</ul>
 					</div>
 

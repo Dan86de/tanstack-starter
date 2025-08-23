@@ -45,18 +45,23 @@ These control when the switch happens:
 
 ### Gap Classes (Optional)
 
-Control spacing between items:
+Control spacing between items using Tailwind's spacing scale:
 
-- `switcher-gap-0` - No gap
-- `switcher-gap-1` - 0.25rem gap
-- `switcher-gap-2` - 0.5rem gap
-- `switcher-gap-3` - 0.75rem gap
-- `switcher-gap-4` - 1rem gap (recommended default)
-- `switcher-gap-5` - 1.25rem gap
-- `switcher-gap-6` - 1.5rem gap
-- `switcher-gap-8` - 2rem gap
-- `switcher-gap-10` - 2.5rem gap
-- `switcher-gap-12` - 3rem gap
+- `switcher-gap-0` - 0 (no gap)
+- `switcher-gap-1` - 0.25rem
+- `switcher-gap-2` - 0.5rem
+- `switcher-gap-3` - 0.75rem
+- `switcher-gap-4` - 1rem (recommended default)
+- `switcher-gap-5` - 1.25rem
+- `switcher-gap-6` - 1.5rem
+- `switcher-gap-8` - 2rem
+- `switcher-gap-10` - 2.5rem
+- `switcher-gap-12` - 3rem
+- `switcher-gap-16` - 4rem
+- `switcher-gap-20` - 5rem
+- `switcher-gap-24` - 6rem
+
+Note: You can use any value from Tailwind's spacing scale (0-96, px, etc.)
 
 ### Limit Attribute (Optional)
 
@@ -198,6 +203,8 @@ You can also use CSS custom properties for fine-tuned control:
 </div>
 ```
 
+The gap utilities use Tailwind's spacing scale system, so any valid Tailwind spacing value works (e.g., `switcher-gap-0.5`, `switcher-gap-14`, `switcher-gap-32`, etc.)
+
 ## Choosing the Right Threshold
 
 - **switcher-sm (20rem)**: Best for navigation bars and small UI elements
@@ -227,11 +234,12 @@ The Switcher utility uses modern CSS features that are well-supported:
 ## Tips and Best Practices
 
 1. **Always use a threshold class**: Every switcher needs one (switcher-sm, switcher-md, etc.)
-2. **Add gap classes for spacing**: Use switcher-gap-4 as a good default
+2. **Add gap classes for spacing**: Use switcher-gap-4 as a good default (matches Tailwind's spacing scale)
 3. **Test with real content**: The switching point depends on actual content width
 4. **Use data-limit wisely**: Prevents too many items from cramming horizontally
 5. **Consider nesting**: You can nest switchers for complex layouts
 6. **Combine with other utilities**: Works great with Stack utility for internal spacing
+7. **Leverage Tailwind's spacing scale**: Gap values follow the same scale as Tailwind's padding/margin utilities
 
 ## Comparison with Traditional Approaches
 
