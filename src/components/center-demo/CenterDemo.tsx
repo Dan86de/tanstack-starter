@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 export function CenterDemo() {
 	return (
 		<div className="space-y-12 p-8">
@@ -135,7 +137,10 @@ export function CenterDemo() {
 								<p className="mb-4">
 									This card is centered based on its content width.
 								</p>
-								<button className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+								<button
+									type="button"
+									className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+								>
 									Action Button
 								</button>
 							</div>
@@ -152,7 +157,10 @@ export function CenterDemo() {
 							This text is both container-centered and text-aligned center,
 							creating a symmetrical, focused presentation.
 						</p>
-						<button className="rounded bg-blue-500 px-6 py-2 text-white hover:bg-blue-600">
+						<button
+							type="button"
+							className="rounded bg-blue-500 px-6 py-2 text-white hover:bg-blue-600"
+						>
 							Centered Button
 						</button>
 					</section>
@@ -183,14 +191,20 @@ export function CenterDemo() {
 						<form className="space-y-4">
 							<h2 className="mb-4 font-bold text-xl">Newsletter Signup</h2>
 							<div>
-								<label className="mb-1 block text-sm">Email</label>
+								<label htmlFor={useId()} className="mb-1 block text-sm">
+									Email
+								</label>
 								<input
+									id={useId()}
 									type="email"
 									className="w-full rounded border px-3 py-2 dark:border-gray-600 dark:bg-gray-700"
 									placeholder="your@email.com"
 								/>
 							</div>
-							<button className="w-full rounded bg-blue-500 py-2 text-white hover:bg-blue-600">
+							<button
+								type="button"
+								className="w-full rounded bg-blue-500 py-2 text-white hover:bg-blue-600"
+							>
 								Subscribe
 							</button>
 						</form>
@@ -246,10 +260,16 @@ export function CenterDemo() {
 							The perfect solution for your business needs
 						</p>
 						<div className="flex justify-center gap-4">
-							<button className="rounded bg-white px-6 py-3 font-semibold text-blue-600 hover:bg-gray-100">
+							<button
+								type="button"
+								className="rounded bg-white px-6 py-3 font-semibold text-blue-600 hover:bg-gray-100"
+							>
 								Get Started
 							</button>
-							<button className="rounded border-2 border-white px-6 py-3 font-semibold hover:bg-white/10">
+							<button
+								type="button"
+								className="rounded border-2 border-white px-6 py-3 font-semibold hover:bg-white/10"
+							>
 								Learn More
 							</button>
 						</div>
@@ -264,22 +284,22 @@ export function CenterDemo() {
 							<h3 className="mb-3 font-semibold">Table of Contents</h3>
 							<ul className="space-y-2 text-sm">
 								<li>
-									<a href="#" className="text-blue-600 hover:underline">
+									<a href="/" className="text-blue-600 hover:underline">
 										1. Introduction
 									</a>
 								</li>
 								<li>
-									<a href="#" className="text-blue-600 hover:underline">
+									<a href="/" className="text-blue-600 hover:underline">
 										2. Getting Started
 									</a>
 								</li>
 								<li>
-									<a href="#" className="text-blue-600 hover:underline">
+									<a href="/" className="text-blue-600 hover:underline">
 										3. API Reference
 									</a>
 								</li>
 								<li>
-									<a href="#" className="text-blue-600 hover:underline">
+									<a href="/" className="text-blue-600 hover:underline">
 										4. Examples
 									</a>
 								</li>
@@ -332,7 +352,10 @@ export function CenterDemo() {
 						</p>
 						<p>Second paragraph maintaining consistent vertical rhythm.</p>
 						<p>Third paragraph completing the centered, stacked layout.</p>
-						<button className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+						<button
+							type="button"
+							className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+						>
 							Call to Action
 						</button>
 					</div>

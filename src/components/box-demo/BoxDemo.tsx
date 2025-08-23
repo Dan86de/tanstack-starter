@@ -48,7 +48,10 @@ export function BoxDemo() {
 								Product description with generous padding for comfortable
 								reading.
 							</p>
-							<button className="rounded bg-blue-500 px-4 py-2 text-sm text-white hover:bg-blue-600">
+							<button
+								type="button"
+								className="rounded bg-blue-500 px-4 py-2 text-sm text-white hover:bg-blue-600"
+							>
 								Add to Cart
 							</button>
 						</article>
@@ -58,7 +61,10 @@ export function BoxDemo() {
 							<p className="mb-4 text-gray-600 text-sm dark:text-gray-400">
 								Consistent spacing and borders across all cards.
 							</p>
-							<button className="rounded bg-blue-500 px-4 py-2 text-sm text-white hover:bg-blue-600">
+							<button
+								type="button"
+								className="rounded bg-blue-500 px-4 py-2 text-sm text-white hover:bg-blue-600"
+							>
 								Add to Cart
 							</button>
 						</article>
@@ -68,7 +74,10 @@ export function BoxDemo() {
 							<p className="mb-4 text-gray-600 text-sm dark:text-gray-400">
 								Box utility makes card layouts clean and uniform.
 							</p>
-							<button className="rounded bg-blue-500 px-4 py-2 text-sm text-white hover:bg-blue-600">
+							<button
+								type="button"
+								className="rounded bg-blue-500 px-4 py-2 text-sm text-white hover:bg-blue-600"
+							>
 								Add to Cart
 							</button>
 						</article>
@@ -277,7 +286,10 @@ export function BoxDemo() {
 						</p>
 						<p>Second paragraph maintaining consistent vertical rhythm.</p>
 						<p>Third paragraph showing how box and stack work together.</p>
-						<button className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+						<button
+							type="button"
+							className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+						>
 							Action Button
 						</button>
 					</div>
@@ -289,16 +301,28 @@ export function BoxDemo() {
 					<div className="box-4">
 						<h3 className="mb-3 font-semibold">Actions</h3>
 						<div className="cluster-2">
-							<button className="rounded border px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">
+							<button
+								type="button"
+								className="rounded border px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+							>
 								Edit
 							</button>
-							<button className="rounded border px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">
+							<button
+								type="button"
+								className="rounded border px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+							>
 								Delete
 							</button>
-							<button className="rounded border px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">
+							<button
+								type="button"
+								className="rounded border px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+							>
 								Share
 							</button>
-							<button className="rounded border px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">
+							<button
+								type="button"
+								className="rounded border px-3 py-1 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+							>
 								Archive
 							</button>
 						</div>
@@ -322,7 +346,10 @@ export function BoxDemo() {
 							Large padding creates breathing room for important content and
 							makes hero sections stand out.
 						</p>
-						<button className="rounded bg-white px-6 py-3 font-semibold text-purple-600 hover:bg-gray-100">
+						<button
+							type="button"
+							className="rounded bg-white px-6 py-3 font-semibold text-purple-600 hover:bg-gray-100"
+						>
 							Call to Action
 						</button>
 					</section>
@@ -403,7 +430,10 @@ export function BoxDemo() {
 								<span className="mr-2">✓</span> Custom integrations
 							</li>
 						</ul>
-						<button className="w-full rounded bg-blue-500 py-2 text-white hover:bg-blue-600">
+						<button
+							type="button"
+							className="w-full rounded bg-blue-500 py-2 text-white hover:bg-blue-600"
+						>
 							Get Started
 						</button>
 					</div>
@@ -421,6 +451,7 @@ export function BoxDemo() {
 									stroke="currentColor"
 									viewBox="0 0 24 24"
 								>
+									<title>Lightning</title>
 									<path
 										strokeLinecap="round"
 										strokeLinejoin="round"
@@ -442,6 +473,7 @@ export function BoxDemo() {
 									stroke="currentColor"
 									viewBox="0 0 24 24"
 								>
+									<title>Secure</title>
 									<path
 										strokeLinecap="round"
 										strokeLinejoin="round"

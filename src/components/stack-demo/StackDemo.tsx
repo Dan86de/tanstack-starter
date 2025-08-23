@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 export function StackDemo() {
 	return (
 		<div className="space-y-12 p-8">
@@ -82,7 +84,7 @@ export function StackDemo() {
 							</label>
 							<input
 								type="text"
-								id="name"
+								id={useId()}
 								className="rounded border px-3 py-2 dark:border-gray-600 dark:bg-gray-700"
 								placeholder="Enter your name"
 							/>
@@ -93,7 +95,7 @@ export function StackDemo() {
 							</label>
 							<input
 								type="email"
-								id="email"
+								id={useId()}
 								className="rounded border px-3 py-2 dark:border-gray-600 dark:bg-gray-700"
 								placeholder="Enter your email"
 							/>
@@ -103,7 +105,7 @@ export function StackDemo() {
 								Message
 							</label>
 							<textarea
-								id="message"
+								id={useId()}
 								rows={4}
 								className="rounded border px-3 py-2 dark:border-gray-600 dark:bg-gray-700"
 								placeholder="Enter your message"
@@ -128,7 +130,10 @@ export function StackDemo() {
 							<p className="text-gray-600 text-sm dark:text-gray-400">
 								Card description text goes here with automatic spacing.
 							</p>
-							<button className="rounded bg-blue-500 px-3 py-1 text-sm text-white hover:bg-blue-600">
+							<button
+								type="button"
+								className="rounded bg-blue-500 px-3 py-1 text-sm text-white hover:bg-blue-600"
+							>
 								Learn More
 							</button>
 						</div>
@@ -138,7 +143,10 @@ export function StackDemo() {
 							<p className="text-gray-600 text-sm dark:text-gray-400">
 								Different content but same spacing pattern throughout.
 							</p>
-							<button className="rounded bg-blue-500 px-3 py-1 text-sm text-white hover:bg-blue-600">
+							<button
+								type="button"
+								className="rounded bg-blue-500 px-3 py-1 text-sm text-white hover:bg-blue-600"
+							>
 								Learn More
 							</button>
 						</div>
@@ -148,7 +156,10 @@ export function StackDemo() {
 							<p className="text-gray-600 text-sm dark:text-gray-400">
 								Consistent vertical rhythm across all cards.
 							</p>
-							<button className="rounded bg-blue-500 px-3 py-1 text-sm text-white hover:bg-blue-600">
+							<button
+								type="button"
+								className="rounded bg-blue-500 px-3 py-1 text-sm text-white hover:bg-blue-600"
+							>
 								Learn More
 							</button>
 						</div>
@@ -180,7 +191,10 @@ export function StackDemo() {
 							</div>
 						</div>
 						<footer>
-							<button className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+							<button
+								type="button"
+								className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+							>
 								Refresh Data
 							</button>
 						</footer>
@@ -225,10 +239,16 @@ export function StackDemo() {
 						<h4 className="font-semibold">⚠️ Important Notice</h4>
 						<p>Your subscription is expiring soon.</p>
 						<div className="flex gap-2">
-							<button className="rounded bg-yellow-600 px-3 py-1 text-white hover:bg-yellow-700">
+							<button
+								type="button"
+								className="rounded bg-yellow-600 px-3 py-1 text-white hover:bg-yellow-700"
+							>
 								Renew Now
 							</button>
-							<button className="rounded border border-yellow-600 px-3 py-1 hover:bg-yellow-100 dark:hover:bg-yellow-800">
+							<button
+								type="button"
+								className="rounded border border-yellow-600 px-3 py-1 hover:bg-yellow-100 dark:hover:bg-yellow-800"
+							>
 								Remind Later
 							</button>
 						</div>
@@ -277,10 +297,16 @@ export function StackDemo() {
 								</span>
 							</div>
 							<div className="flex gap-2">
-								<button className="rounded border px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-700">
+								<button
+									type="button"
+									className="rounded border px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-700"
+								>
 									Share
 								</button>
-								<button className="rounded border px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-700">
+								<button
+									type="button"
+									className="rounded border px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-700"
+								>
 									Save
 								</button>
 							</div>
@@ -324,7 +350,10 @@ export function StackDemo() {
 							</label>
 						</section>
 
-						<button className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+						<button
+							type="button"
+							className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+						>
 							Save Changes
 						</button>
 					</div>
