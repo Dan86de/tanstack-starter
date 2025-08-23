@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switcher Test</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            padding: 2rem;
+            background: #f3f4f6;
+        }
+
+        /* Switcher CSS Implementation */
+        .switcher {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--switcher-gap, 1rem);
+        }
+
+        .switcher > * {
+            flex-grow: 1;
+            flex-basis: calc((var(--switcher-threshold, 30rem) - 100%) * 999);
+        }
+
+        /* Threshold presets */
+        .switcher-sm {
+            --switcher-threshold: 20rem;
+        }
+
+        .switcher-md {
+            --switcher-threshold: 30rem;
+        }
+
+        .switcher-lg {
+            --switcher-threshold: 40rem;
+        }
+
+        /* Gap presets */
+        .switcher-gap-2 {
+            --switcher-gap: 0.5rem;
+        }
+
+        .switcher-gap-4 {
+            --switcher-gap: 1rem;
+        }
+
+        .switcher-gap-6 {
+            --switcher-gap: 1.5rem;
+        }
+
+        /* Limit variants */
+        .switcher[data-limit="3"] > :nth-last-child(n + 4),
+        .switcher[data-limit="3"] > :nth-last-child(n + 4) ~ * {
+            flex-basis: 100%;
+        }
+
+        /* Demo styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .box {
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .box-red { background: #ef4444; color: white; }
+        .box-blue { background: #3b82f6; color: white; }
+        .box-green { background: #10b981; color: white; }
+        .box-purple { background: #8b5cf6; color: white; }
+        .box-orange { background: #f97316; color: white; }
+
+        h1 { margin-bottom: 1rem; }
+        h2 { margin: 2rem 0 1rem; }
+        p { margin-bottom: 1rem; color: #6b7280; }
+        .info {
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Switcher CSS Test Page</h1>
+        <div class="info">
+            <strong>🔍 How to test:</strong> Resize your browser window horizontally. The boxes should switch between horizontal (side-by-side) and vertical (stacked) layouts automatically.
+        </div>
+
+        <h2>Test 1: Basic Switcher (30rem threshold)</h2>
+        <p>Should switch around 480px container width</p>
+        <div class="switcher switcher-md switcher-gap-4">
+            <div class="box box-red">
+                <h3>Box 1</h3>
+                <p>Flexible layout</p>
+            </div>
+            <div class="box box-blue">
+                <h3>Box 2</h3>
+                <p>Responsive design</p>
+            </div>
+            <div class="box box-green">
+                <h3>Box 3</h3>
+                <p>No media queries!</p>
+            </div>
+        </div>
+
+        <h2>Test 2: Small Threshold (20rem)</h2>
+        <p>Switches to vertical earlier (around 320px)</p>
+        <div class="switcher switcher-sm switcher-gap-4">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+
+        <h2>Test 3: Large Threshold (40rem)</h2>
+        <p>Switches to vertical later (around 640px)</p>
+        <div class="switcher switcher-lg switcher-gap-4">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+        </div>
+
+        <h2>Test 4: With Limit (max 3 items horizontal)</h2>
+        <p>5 items with limit=3, should always be vertical</p>
+        <div class="switcher switcher-md switcher-gap-4" data-limit="3">
+            <div class="box box-purple">1</div>
+            <div class="box box-purple">2</div>
+            <div class="box box-purple">3</div>
+            <div class="box box-purple">4</div>
+            <div class="box box-purple">5</div>
+        </div>
+
+        <h2>Test 5: Different Gaps</h2>
+        <p>Small gap (0.5rem)</p>
+        <div class="switcher switcher-md switcher-gap-2">
+            <div class="box box-orange">A</div>
+            <div class="box box-orange">B</div>
+            <div class="box box-orange">C</div>
+        </div>
+
+        <p style="margin-top: 1rem;">Large gap (1.5rem)</p>
+        <div class="switcher switcher-md switcher-gap-6">
+            <div class="box box-orange">A</div>
+            <div class="box box-orange">B</div>
+            <div class="box box-orange">C</div>
+        </div>
+
+        <h2>Test 6: Custom CSS Variables</h2>
+        <p>Custom threshold of 35rem via inline styles</p>
+        <div class="switcher" style="--switcher-threshold: 35rem; --switcher-gap: 1.25rem;">
+            <div class="box box-red">Custom 1</div>
+            <div class="box box-blue">Custom 2</div>
+            <div class="box box-green">Custom 3</div>
+        </div>
+
+        <div style="margin-top: 4rem; padding: 2rem; background: #e5e7eb; border-radius: 8px;">
+            <h3>Current viewport width: <span id="width"></span></h3>
+            <h3>Container width: <span id="container-width"></span></h3>
+        </div>
+    </div>
+
+    <script>
+        // Display current widths for debugging
+        function updateWidths() {
+            document.getElementById('width').textContent = window.innerWidth + 'px';
+            document.getElementById('container-width').textContent = document.querySelector('.container').offsetWidth + 'px';
+        }
+        updateWidths();
+        window.addEventListener('resize', updateWidths);
+    </script>
+</body>
+</html>

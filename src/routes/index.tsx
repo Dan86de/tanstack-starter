@@ -36,6 +36,11 @@ function Home() {
 					Sidebar
 					</Link>
 				</li>
+				<li>
+					<Link to="/switcher" className="hover:underline">
+					Switcher
+					</Link>
+				</li>
 			</ol>
 		</div>
 	);

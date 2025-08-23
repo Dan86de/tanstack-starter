@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SwitcherRouteImport } from './routes/switcher'
 import { Route as StackRouteImport } from './routes/stack'
 import { Route as SidebarRouteImport } from './routes/sidebar'
 import { Route as ClusterRouteImport } from './routes/cluster'
@@ -16,6 +17,11 @@ import { Route as CenterRouteImport } from './routes/center'
 import { Route as BoxRouteImport } from './routes/box'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SwitcherRoute = SwitcherRouteImport.update({
+  id: '/switcher',
+  path: '/switcher',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StackRoute = StackRouteImport.update({
   id: '/stack',
   path: '/stack',
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/cluster': typeof ClusterRoute
   '/sidebar': typeof SidebarRoute
   '/stack': typeof StackRoute
+  '/switcher': typeof SwitcherRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/cluster': typeof ClusterRoute
   '/sidebar': typeof SidebarRoute
   '/stack': typeof StackRoute
+  '/switcher': typeof SwitcherRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,13 +79,36 @@ export interface FileRoutesById {
   '/cluster': typeof ClusterRoute
   '/sidebar': typeof SidebarRoute
   '/stack': typeof StackRoute
+  '/switcher': typeof SwitcherRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/box' | '/center' | '/cluster' | '/sidebar' | '/stack'
+  fullPaths:
+    | '/'
+    | '/box'
+    | '/center'
+    | '/cluster'
+    | '/sidebar'
+    | '/stack'
+    | '/switcher'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/box' | '/center' | '/cluster' | '/sidebar' | '/stack'
-  id: '__root__' | '/' | '/box' | '/center' | '/cluster' | '/sidebar' | '/stack'
+  to:
+    | '/'
+    | '/box'
+    | '/center'
+    | '/cluster'
+    | '/sidebar'
+    | '/stack'
+    | '/switcher'
+  id:
+    | '__root__'
+    | '/'
+    | '/box'
+    | '/center'
+    | '/cluster'
+    | '/sidebar'
+    | '/stack'
+    | '/switcher'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -87,10 +118,18 @@ export interface RootRouteChildren {
   ClusterRoute: typeof ClusterRoute
   SidebarRoute: typeof SidebarRoute
   StackRoute: typeof StackRoute
+  SwitcherRoute: typeof SwitcherRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/switcher': {
+      id: '/switcher'
+      path: '/switcher'
+      fullPath: '/switcher'
+      preLoaderRoute: typeof SwitcherRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/stack': {
       id: '/stack'
       path: '/stack'
@@ -143,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   ClusterRoute: ClusterRoute,
   SidebarRoute: SidebarRoute,
   StackRoute: StackRoute,
+  SwitcherRoute: SwitcherRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

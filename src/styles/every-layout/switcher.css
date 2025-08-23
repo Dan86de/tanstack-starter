@@ -1,0 +1,193 @@
+/* Switcher utility - switches between horizontal and vertical layouts based on container width */
+
+/* Base switcher utility */
+@utility switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--switcher-gap, 1rem);
+}
+
+/* Apply flex properties to all direct children */
+.switcher > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--switcher-threshold, 30rem) - 100%) * 999);
+}
+
+/* Threshold size utilities */
+@utility switcher-sm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--switcher-gap, 1rem);
+  --switcher-threshold: 20rem;
+}
+
+.switcher-sm > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--switcher-threshold, 20rem) - 100%) * 999);
+}
+
+@utility switcher-md {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--switcher-gap, 1rem);
+  --switcher-threshold: 30rem;
+}
+
+.switcher-md > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--switcher-threshold, 30rem) - 100%) * 999);
+}
+
+@utility switcher-lg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--switcher-gap, 1rem);
+  --switcher-threshold: 40rem;
+}
+
+.switcher-lg > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--switcher-threshold, 40rem) - 100%) * 999);
+}
+
+@utility switcher-xl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--switcher-gap, 1rem);
+  --switcher-threshold: 50rem;
+}
+
+.switcher-xl > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--switcher-threshold, 50rem) - 100%) * 999);
+}
+
+@utility switcher-2xl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--switcher-gap, 1rem);
+  --switcher-threshold: 60rem;
+}
+
+.switcher-2xl > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--switcher-threshold, 60rem) - 100%) * 999);
+}
+
+/* Gap modifier utilities */
+@utility switcher-gap-0 {
+  --switcher-gap: 0;
+}
+
+@utility switcher-gap-1 {
+  --switcher-gap: 0.25rem;
+}
+
+@utility switcher-gap-2 {
+  --switcher-gap: 0.5rem;
+}
+
+@utility switcher-gap-3 {
+  --switcher-gap: 0.75rem;
+}
+
+@utility switcher-gap-4 {
+  --switcher-gap: 1rem;
+}
+
+@utility switcher-gap-5 {
+  --switcher-gap: 1.25rem;
+}
+
+@utility switcher-gap-6 {
+  --switcher-gap: 1.5rem;
+}
+
+@utility switcher-gap-8 {
+  --switcher-gap: 2rem;
+}
+
+@utility switcher-gap-10 {
+  --switcher-gap: 2.5rem;
+}
+
+@utility switcher-gap-12 {
+  --switcher-gap: 3rem;
+}
+
+/* Limit variants for controlling max items in horizontal layout */
+/* These need to be regular CSS classes since they use attribute selectors */
+.switcher[data-limit="1"] > :nth-last-child(n + 2),
+.switcher[data-limit="1"] > :nth-last-child(n + 2) ~ *,
+.switcher-sm[data-limit="1"] > :nth-last-child(n + 2),
+.switcher-sm[data-limit="1"] > :nth-last-child(n + 2) ~ *,
+.switcher-md[data-limit="1"] > :nth-last-child(n + 2),
+.switcher-md[data-limit="1"] > :nth-last-child(n + 2) ~ *,
+.switcher-lg[data-limit="1"] > :nth-last-child(n + 2),
+.switcher-lg[data-limit="1"] > :nth-last-child(n + 2) ~ *,
+.switcher-xl[data-limit="1"] > :nth-last-child(n + 2),
+.switcher-xl[data-limit="1"] > :nth-last-child(n + 2) ~ *,
+.switcher-2xl[data-limit="1"] > :nth-last-child(n + 2),
+.switcher-2xl[data-limit="1"] > :nth-last-child(n + 2) ~ * {
+  flex-basis: 100%;
+}
+
+.switcher[data-limit="2"] > :nth-last-child(n + 3),
+.switcher[data-limit="2"] > :nth-last-child(n + 3) ~ *,
+.switcher-sm[data-limit="2"] > :nth-last-child(n + 3),
+.switcher-sm[data-limit="2"] > :nth-last-child(n + 3) ~ *,
+.switcher-md[data-limit="2"] > :nth-last-child(n + 3),
+.switcher-md[data-limit="2"] > :nth-last-child(n + 3) ~ *,
+.switcher-lg[data-limit="2"] > :nth-last-child(n + 3),
+.switcher-lg[data-limit="2"] > :nth-last-child(n + 3) ~ *,
+.switcher-xl[data-limit="2"] > :nth-last-child(n + 3),
+.switcher-xl[data-limit="2"] > :nth-last-child(n + 3) ~ *,
+.switcher-2xl[data-limit="2"] > :nth-last-child(n + 3),
+.switcher-2xl[data-limit="2"] > :nth-last-child(n + 3) ~ * {
+  flex-basis: 100%;
+}
+
+.switcher[data-limit="3"] > :nth-last-child(n + 4),
+.switcher[data-limit="3"] > :nth-last-child(n + 4) ~ *,
+.switcher-sm[data-limit="3"] > :nth-last-child(n + 4),
+.switcher-sm[data-limit="3"] > :nth-last-child(n + 4) ~ *,
+.switcher-md[data-limit="3"] > :nth-last-child(n + 4),
+.switcher-md[data-limit="3"] > :nth-last-child(n + 4) ~ *,
+.switcher-lg[data-limit="3"] > :nth-last-child(n + 4),
+.switcher-lg[data-limit="3"] > :nth-last-child(n + 4) ~ *,
+.switcher-xl[data-limit="3"] > :nth-last-child(n + 4),
+.switcher-xl[data-limit="3"] > :nth-last-child(n + 4) ~ *,
+.switcher-2xl[data-limit="3"] > :nth-last-child(n + 4),
+.switcher-2xl[data-limit="3"] > :nth-last-child(n + 4) ~ * {
+  flex-basis: 100%;
+}
+
+.switcher[data-limit="4"] > :nth-last-child(n + 5),
+.switcher[data-limit="4"] > :nth-last-child(n + 5) ~ *,
+.switcher-sm[data-limit="4"] > :nth-last-child(n + 5),
+.switcher-sm[data-limit="4"] > :nth-last-child(n + 5) ~ *,
+.switcher-md[data-limit="4"] > :nth-last-child(n + 5),
+.switcher-md[data-limit="4"] > :nth-last-child(n + 5) ~ *,
+.switcher-lg[data-limit="4"] > :nth-last-child(n + 5),
+.switcher-lg[data-limit="4"] > :nth-last-child(n + 5) ~ *,
+.switcher-xl[data-limit="4"] > :nth-last-child(n + 5),
+.switcher-xl[data-limit="4"] > :nth-last-child(n + 5) ~ *,
+.switcher-2xl[data-limit="4"] > :nth-last-child(n + 5),
+.switcher-2xl[data-limit="4"] > :nth-last-child(n + 5) ~ * {
+  flex-basis: 100%;
+}
+
+.switcher[data-limit="5"] > :nth-last-child(n + 6),
+.switcher[data-limit="5"] > :nth-last-child(n + 6) ~ *,
+.switcher-sm[data-limit="5"] > :nth-last-child(n + 6),
+.switcher-sm[data-limit="5"] > :nth-last-child(n + 6) ~ *,
+.switcher-md[data-limit="5"] > :nth-last-child(n + 6),
+.switcher-md[data-limit="5"] > :nth-last-child(n + 6) ~ *,
+.switcher-lg[data-limit="5"] > :nth-last-child(n + 6),
+.switcher-lg[data-limit="5"] > :nth-last-child(n + 6) ~ *,
+.switcher-xl[data-limit="5"] > :nth-last-child(n + 6),
+.switcher-xl[data-limit="5"] > :nth-last-child(n + 6) ~ *,
+.switcher-2xl[data-limit="5"] > :nth-last-child(n + 6),
+.switcher-2xl[data-limit="5"] > :nth-last-child(n + 6) ~ * {
+  flex-basis: 100%;
+}
