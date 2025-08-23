@@ -31,6 +31,11 @@ function Home() {
 						Cluster
 					</Link>
 				</li>
+				<li>
+					<Link to="/sidebar" className="hover:underline">
+					Sidebar
+					</Link>
+				</li>
 			</ol>
 		</div>
 	);

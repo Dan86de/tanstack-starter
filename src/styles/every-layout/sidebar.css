@@ -1,0 +1,316 @@
+/* Sidebar utility - A layout for placing two elements side-by-side with responsive behavior */
+/*
+ * How stacking works:
+ * 1. When side-by-side: Sidebar has fixed width, content fills remaining space
+ * 2. When content can't maintain its minimum width alongside sidebar, flexbox wraps
+ * 3. When wrapped/stacked: Both elements have flex-grow:1 so they expand to full width
+ *
+ * The key is that sidebar keeps flex-grow:1, allowing it to expand when stacked
+ */
+
+@theme {
+  /* Default sidebar width when no specific width is set */
+  --sidebar-default-width: 20rem;
+  /* Default minimum content width as a percentage */
+  --sidebar-content-min: 50%;
+  /* Default gap between sidebar and content */
+  --sidebar-gap: 1rem;
+}
+
+/* Base sidebar utility with default settings */
+@utility sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-gap);
+
+  & > * {
+    /* Both elements grow to fill available space */
+    flex-grow: 1;
+  }
+}
+
+/* Sidebar with custom gap using spacing scale */
+@utility sidebar-gap-* {
+  --sidebar-gap: --spacing(--value(integer));
+}
+
+/* Left sidebar (default) */
+@utility sidebar-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-gap);
+
+  & > * {
+    /* Base: both elements can grow (important for full width when stacked) */
+    flex-grow: 1;
+  }
+
+  /* Sidebar element - fixed width when horizontal, full width when stacked */
+  & > :first-child {
+    flex-basis: var(--sidebar-width, var(--sidebar-default-width));
+    /* Keeps flex-grow: 1 from parent rule, allowing full width when wrapped */
+  }
+
+  /* Content element - fills remaining space when horizontal */
+  & > :last-child {
+    flex-basis: 0;
+    flex-grow: 999; /* Much higher grow factor to fill remaining space */
+    min-inline-size: var(
+      --sidebar-content-min
+    ); /* Forces wrap when too narrow */
+  }
+}
+
+/* Right sidebar */
+@utility sidebar-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-gap);
+
+  & > * {
+    /* Base: both elements can grow (important for full width when stacked) */
+    flex-grow: 1;
+  }
+
+  /* Content element - fills remaining space when horizontal */
+  & > :first-child {
+    flex-basis: 0;
+    flex-grow: 999; /* Much higher grow factor to fill remaining space */
+    min-inline-size: var(
+      --sidebar-content-min
+    ); /* Forces wrap when too narrow */
+  }
+
+  /* Sidebar element - fixed width when horizontal, full width when stacked */
+  & > :last-child {
+    flex-basis: var(--sidebar-width, var(--sidebar-default-width));
+    /* Keeps flex-grow: 1 from parent rule, allowing full width when wrapped */
+  }
+}
+
+/* Sidebar with specific width values */
+@utility sidebar-w-* {
+  --sidebar-width: --spacing(--value(integer));
+}
+
+/* Sidebar with fractional widths - using percentages */
+@utility sidebar-w-1-4 {
+  --sidebar-width: 25%;
+}
+
+@utility sidebar-w-1-3 {
+  --sidebar-width: 33.333333%;
+}
+
+@utility sidebar-w-1-2 {
+  --sidebar-width: 50%;
+}
+
+@utility sidebar-w-2-3 {
+  --sidebar-width: 66.666667%;
+}
+
+@utility sidebar-w-3-4 {
+  --sidebar-width: 75%;
+}
+
+/* Sidebar with preset sizes */
+@utility sidebar-w-xs {
+  --sidebar-width: 16rem;
+}
+
+@utility sidebar-w-sm {
+  --sidebar-width: 20rem;
+}
+
+@utility sidebar-w-md {
+  --sidebar-width: 24rem;
+}
+
+@utility sidebar-w-lg {
+  --sidebar-width: 28rem;
+}
+
+@utility sidebar-w-xl {
+  --sidebar-width: 32rem;
+}
+
+@utility sidebar-w-2xl {
+  --sidebar-width: 36rem;
+}
+
+@utility sidebar-w-3xl {
+  --sidebar-width: 42rem;
+}
+
+/* Content minimum width modifiers */
+@utility sidebar-content-min-* {
+  --sidebar-content-min: calc(--value(integer) * 1%);
+}
+
+@utility sidebar-content-min-1-4 {
+  --sidebar-content-min: 25%;
+}
+
+@utility sidebar-content-min-1-3 {
+  --sidebar-content-min: 33.333333%;
+}
+
+@utility sidebar-content-min-1-2 {
+  --sidebar-content-min: 50%;
+}
+
+@utility sidebar-content-min-2-3 {
+  --sidebar-content-min: 66.666667%;
+}
+
+@utility sidebar-content-min-3-4 {
+  --sidebar-content-min: 75%;
+}
+
+/* No stretch modifier - makes adjacent elements adopt their natural height */
+@utility sidebar-no-stretch {
+  align-items: flex-start;
+}
+
+/* Combined utilities for common patterns */
+@utility sidebar-left-sm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-gap);
+  --sidebar-width: 20rem;
+
+  & > * {
+    flex-grow: 1;
+  }
+
+  & > :first-child {
+    flex-basis: var(--sidebar-width);
+  }
+
+  & > :last-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: var(--sidebar-content-min);
+  }
+}
+
+@utility sidebar-left-md {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-gap);
+  --sidebar-width: 24rem;
+
+  & > * {
+    flex-grow: 1;
+  }
+
+  & > :first-child {
+    flex-basis: var(--sidebar-width);
+  }
+
+  & > :last-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: var(--sidebar-content-min);
+  }
+}
+
+@utility sidebar-left-lg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-gap);
+  --sidebar-width: 28rem;
+
+  & > * {
+    flex-grow: 1;
+  }
+
+  & > :first-child {
+    flex-basis: var(--sidebar-width);
+  }
+
+  & > :last-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: var(--sidebar-content-min);
+  }
+}
+
+@utility sidebar-right-sm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-gap);
+  --sidebar-width: 20rem;
+
+  & > * {
+    flex-grow: 1;
+  }
+
+  & > :first-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: var(--sidebar-content-min);
+  }
+
+  & > :last-child {
+    flex-basis: var(--sidebar-width);
+  }
+}
+
+@utility sidebar-right-md {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-gap);
+  --sidebar-width: 24rem;
+
+  & > * {
+    flex-grow: 1;
+  }
+
+  & > :first-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: var(--sidebar-content-min);
+  }
+
+  & > :last-child {
+    flex-basis: var(--sidebar-width);
+  }
+}
+
+@utility sidebar-right-lg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-gap);
+  --sidebar-width: 28rem;
+
+  & > * {
+    flex-grow: 1;
+  }
+
+  & > :first-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-inline-size: var(--sidebar-content-min);
+  }
+
+  & > :last-child {
+    flex-basis: var(--sidebar-width);
+  }
+}
+
+/* Sidebar with auto width (content-based) */
+@utility sidebar-w-auto {
+  --sidebar-width: auto;
+
+  &.sidebar-left > :first-child,
+  &.sidebar-right > :last-child {
+    flex-basis: auto;
+  }
+}
+
+/* Reverse sidebar (flips the layout) */
+@utility sidebar-reverse {
+  flex-direction: row-reverse;
+}
